@@ -20,6 +20,7 @@
     font-family: vars.$font-sonoma;
 
     &-link {
+      font-family: vars.$font-sonoma;
       font-size: vars.$text-m;
       font-weight: vars.$font-weight-bold;
       color: vars.$color-gray-100;
@@ -34,5 +35,11 @@
       font-weight: vars.$font-weight-semibold;
       color: vars.$color-gray-100;
     }
+    @media (max-width: 768px){
+      &-text{
+        display: none;
+      }
+    }
+
   }
 }

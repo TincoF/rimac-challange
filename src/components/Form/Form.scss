@@ -1,0 +1,144 @@
+@use "/src/styles/variables.scss" as vars;
+.formulario {
+  width: 100%;
+  max-width: 380px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  font-family: vars.$font-sonoma;
+
+  &__descripcion {
+    font-family: vars.$font-sonoma;
+    font-size: vars.$text-xs;
+    font-weight: vars.$font-weight-semibold;
+    color: vars.$color-gray-100;
+    margin: 0px;
+    
+  }
+
+  &__input-grupo {
+    display: flex;
+    font-family: vars.$font-sonoma;
+    background-color: transparent;
+    height: 56px;
+    
+    &-container {
+
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        }
+    .formulario__select {
+      width: 140px;
+      padding: 8px 16px;
+      border-radius: 8px 0 0 8px;
+      color: vars.$color-gray-100;
+      border: 1px solid vars.$color-neutral-400;
+      background-color: transparent;
+      font-family: vars.$font-sonoma;
+      font-size: vars.$text-s;
+      font-weight: vars.$font-weight-regular;
+      cursor: not-allowed;
+    }
+
+    .formulario__input {
+      font-family: vars.$font-sonoma;
+      font-size: vars.$text-s;
+      font-weight: vars.$font-weight-regular;
+      flex: 1;
+      padding: 8px 16px;
+      border-radius: 0 8px 8px 0;
+      color: vars.$color-gray-100;
+      border: 1px solid vars.$color-neutral-400;
+      background-color: transparent;
+      outline: none;
+    }
+  }
+  &__input-unico-grupo {
+    display: flex;
+    font-family: vars.$font-sonoma;
+    background-color: transparent;
+    height: 56px;
+  }
+
+  &__input-unico {
+    width: 100%;
+    font-family: vars.$font-sonoma;
+    font-size: vars.$text-s;
+    font-weight: vars.$font-weight-regular;
+    flex: 1;
+    padding: 8px 16px;
+    border-radius: 8px;
+    color: vars.$color-gray-100;
+    border: 1px solid vars.$color-neutral-400;
+    background-color: transparent;
+    outline: none;
+  }
+
+  &__checkbox-grupo {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    label {
+      font-size: vars.$text-xxs;
+      display: flex;
+      align-items: center;
+      color: vars.$color-gray-200;
+      font-weight: vars.$font-weight-regular;
+      position: relative;
+      cursor: pointer;
+      user-select: none;
+
+      input[type="checkbox"] {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+      }
+      .formulario__custom-checkbox {
+        margin-right: 12px;
+        width: 20px;
+        height: 20px;
+        border: 1px solid vars.$color-gray-200;
+        border-radius: 6px;
+        display: inline-block;
+        background-size: cover;
+        transition: background 0.2s;
+      }
+
+      input[type="checkbox"]:checked + .formulario__custom-checkbox {
+        background-image: url("../../assets/img/Checkbox.png");
+        border: 1px solid vars.$color-gray-200;
+      }
+    }
+  }
+
+  &__terminos {
+    font-size: 0.8rem;
+    color: vars.$color-gray-100;
+    text-decoration: underline;
+    font-weight: vars.$font-weight-semibold;
+    margin: 0px;
+  }
+
+  &__boton {
+    
+    padding: 0.75rem;
+    font-size: vars.$text-l;
+    background-color: vars.$color-gray-100;
+    color: white;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-weight: vars.$font-weight-bold;
+    transition: 0.2s;
+    width: 195px;
+    height: 64px;
+
+    &:hover {
+      background-color: vars.$color-text;
+    }
+  }
+}
