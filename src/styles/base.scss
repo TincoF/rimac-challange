@@ -1,0 +1,35 @@
+@font-face {
+  font-family: 'Sonoma';
+  src: url('/src/assets/fonts/BRSonoma-Regular-BF.otf') format('opentype');
+  font-weight: 400; // Regular
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Sonoma';
+  src: url('/src/assets/fonts/BRSonoma-SemiBold-BF.otf') format('opentype');
+  font-weight: 600; // SemiBold
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Sonoma';
+  src: url('/src/assets/fonts/BRSonoma-Bold-BF.otf') format('opentype');
+  font-weight: 700; // Bold
+  font-style: normal;
+}
+
+body {
+  font-family: 'Lato', 'Sonoma', sans-serif;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 64px);
+  gap: 32px;
+  justify-content: center;
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(4, 72px);
+    gap: 16px;
+  }
+}

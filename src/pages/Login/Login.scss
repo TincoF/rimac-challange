@@ -1,0 +1,35 @@
+@use "/src/styles/variables.scss" as vars;
+.login {
+  &__section {
+    background-color: vars.$color-fondo-login;
+    align-items: center;
+    padding: 64px 0;
+  }
+  &__content {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    gap: 40px;
+  }
+  &__image {
+    height: 560px;
+    width:auto;
+    img {
+      height: 100%;
+      object-fit: cover;
+      border-radius: 24px;
+    }
+  }
+  &__form {
+    background-color: vars.$color-white;
+    border-radius: 8px;
+    padding: 40px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+}

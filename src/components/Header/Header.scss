@@ -1,0 +1,38 @@
+@use '/src/styles/variables.scss' as vars;
+.header{
+  background-color: vars.$color-fondo-login;
+  &__content{
+    grid-column: 1 / -1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 64px;
+  }
+  &__logo {
+    display: flex;
+    
+  }
+  &__contact {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    font-family: vars.$font-sonoma;
+
+    &-link {
+      font-size: vars.$text-m;
+      font-weight: vars.$font-weight-bold;
+      color: vars.$color-gray-100;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+    }
+
+    &-text {
+      font-size: vars.$text-xxs;
+      font-weight: vars.$font-weight-semibold;
+      color: vars.$color-gray-100;
+    }
+  }
+}
