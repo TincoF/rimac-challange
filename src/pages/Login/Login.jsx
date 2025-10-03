@@ -2,6 +2,8 @@ import { Footer } from "../../components/Footer/Footer";
 import Formulario from "../../components/Form/Form";
 import { Header } from "../../components/Header/Header";
 import "./Login.scss";
+import portadaLogin from "../../assets/img/portada-login.png";
+import portadaSmall from "../../assets/img/portada-small.png";
 export const Login = () => {
   return (
     <>
@@ -12,7 +14,7 @@ export const Login = () => {
             <div className="login">
               <div className="login__image-container">
                 <img
-                  src="/src/assets/img/portada-login.png"
+                  src={portadaLogin}
                   alt="Imagen principal"
                   className="login__image"
                 />
@@ -27,7 +29,7 @@ export const Login = () => {
                       Creado para ti y tu familia
                     </h2>
                   </div>
-                  <img src="/src/assets/img/portada-small.png" className="login__title-image" alt="" />
+                  <img src={portadaSmall} className="login__title-image" alt="" />
                 </div>
                 {/* <h2 className="login__title">
                   Creado para ti y tu familia
