@@ -5,11 +5,13 @@ import StepNav from "../../components/StepsNav/StepNav";
 import "./Summary.scss";
 
 export const Summary = () => {
+  const userData = JSON.parse(localStorage.getItem("userData"));
+  const formData = JSON.parse(localStorage.getItem("formData"));
+  const selectedPlan = JSON.parse(localStorage.getItem("selectedPlan"));
+  const finalPrice = JSON.parse(localStorage.getItem("finalPrice"));
   return (
     <>
     <div style={{height: '100%'}}>
-
-    
       <Header />
       <StepNav activeStep={2} />
       <section className="summary__section">
@@ -21,11 +23,11 @@ export const Summary = () => {
                   Resumen del seguro
                 </div>
             <CardInfo
-              name="Juan Pérez"
-              dni="12345678"
-              cel="987654321"
-              plan="Plan Básico"
-              price="29.90"
+              name={`${userData?.name} ${userData?.lastName}`}
+              dni={formData?.dni}
+              cel={formData?.telefono}
+              plan={selectedPlan?.name}
+              price={finalPrice}
             />
           </div>
           </div>

@@ -1,35 +1,48 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./Plans.scss";
 import { Header } from "../../components/Header/Header";
 import StepNav from "../../components/StepsNav/StepNav";
 import CardCheck from "../../components/CradCheck/CardCheck";
 import CardPlan from "../../components/CardPlans/CardPlans";
 import { ButtonBack } from "../../components/ButtonBack/ButtomBack";
+import { calculateAge } from "../../utils/age";
+import { getPlans } from "../../services/plans";
 
 export const Plans = () => {
   const [selectedOption, setSelectedOption] = useState(null);
+  const [planes, setPlanes] = useState([]);
+  const [userName, setUserName] = useState("");
 
-  const planes = [
-    {
-      name: "Plan Básico",
-      price: 100,
-      discountPrice: 80,
-      description: "Cobertura básica.",
-    },
-    {
-      name: "Plan Estándar",
-      price: 150,
-      discountPrice: 120,
-      description: "Cobertura media.",
-    },
-    {
-      name: "Plan Premium",
-      price: 200,
-      discountPrice: 160,
-      description: "Cobertura total.",
-    },
-  ];
+  useEffect(() => {
+    const fetchPlans = async () => {
+      try {
+        // Obtener usuario desde localStorage
+        const storedUser = JSON.parse(localStorage.getItem("userData"));
+        if (!storedUser) return;
 
+        const userAge = calculateAge(storedUser.birthDay);
+
+        // Consumir API
+        const plansApi = await getPlans();
+        const data = plansApi;
+        setUserName(storedUser.name);
+
+        // Filtrar planes según la edad
+        const validPlans = data.list.filter((plan) => userAge <= plan.age);
+
+        setPlanes(validPlans);
+      } catch (err) {
+        console.error("Error al cargar planes:", err);
+      }
+    };
+
+    fetchPlans();
+  }, []);
+  const handleSelectPlan = (plan, finalPrice) => {
+    localStorage.setItem("selectedPlan", JSON.stringify(plan));
+    localStorage.setItem("finalPrice", JSON.stringify(finalPrice));
+    window.location.href = "/resumen"; // 👈 redirección
+  };
   return (
     <>
       <Header />
@@ -41,7 +54,7 @@ export const Plans = () => {
               <ButtonBack />
               <div className="select">
                 <div className="select__titulo">
-                  <span>Rocío</span> ¿Para quién deseas cotizar?
+                  <span>{userName}</span> ¿Para quién deseas cotizar?
                 </div>
                 <div className="select__subtitulo">
                   Selecciona la opción que se ajuste más a tus necesidades.
@@ -67,20 +80,23 @@ export const Plans = () => {
 
                 {selectedOption && (
                   <div className="planes__lista">
-                    {planes.map((plan, index) => (
-                      <CardPlan
-                        key={index}
-                        name={plan.name}
-                        price={plan.price}
-                        discountPrice={
-                          selectedOption === "regalo"
-                            ? plan.discountPrice
-                            : null
-                        }
-                        description={plan.description}
-                        recommended={plan.name === "Plan Estándar"}
-                      />
-                    ))}
+                    {planes.map((plan, index) => {
+                      const finalPrice =
+                        selectedOption === "regalo"
+                          ? plan.price * 0.95
+                          : plan.price;
+                      return (
+                        <CardPlan
+                          key={index}
+                          name={plan.name}
+                          price={plan.price}
+                          discountPrice={finalPrice}
+                          description={plan.description}
+                          recommended={plan.name === "Plan en Casa y Clínica"}
+                          onSelect={() => handleSelectPlan(plan, finalPrice)}
+                        />
+                      );
+                    })}
                   </div>
                 )}
               </div>

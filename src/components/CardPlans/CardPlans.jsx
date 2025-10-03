@@ -1,5 +1,6 @@
 import "./CardPlans.scss";
-const CardPlan = ({ name, price, discountPrice, description, recommended }) => {
+const CardPlan = ({ name, price, discountPrice, description, recommended, onSelect }) => {
+  
   return (
     <div className="card-plan">
       {recommended && (
@@ -32,7 +33,7 @@ const CardPlan = ({ name, price, discountPrice, description, recommended }) => {
 
             <div className="divider"></div>
       <p className="card-plan__description">{description}</p>
-      <button className="card-plan__button">Seleccionar</button>
+      <button className="card-plan__button" onClick={onSelect}>Seleccionar</button>
     </div>
   );
 };

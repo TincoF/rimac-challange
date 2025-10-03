@@ -1,9 +1,12 @@
 import "./ButtonBack.scss";
-export const ButtonBack = () => (
-  <div className="button-back">
-    <svg
-      width="20"
-      height="20"
+import { useNavigate } from "react-router-dom";
+export const ButtonBack = () => {
+  const navigate = useNavigate();
+  return (
+    <div className="button-back" onClick={() => navigate(-1)}>
+      <svg
+        width="20"
+        height="20"
       viewBox="0 0 20 20"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -24,3 +27,4 @@ export const ButtonBack = () => (
     <span className="button-back__text">Volver</span>
   </div>
 );
+};
