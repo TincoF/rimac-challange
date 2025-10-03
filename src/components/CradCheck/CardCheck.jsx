@@ -1,5 +1,6 @@
 
 import "./CardCheck.scss";
+import check from "../../assets/img/radioButton.png";
 
 const CardCheck = ({ title, description, selected, onSelect, img }) => {
   return (
@@ -12,7 +13,7 @@ const CardCheck = ({ title, description, selected, onSelect, img }) => {
       <div className="card-opcion__check">
         {selected ? (
           <img
-            src="/src/assets/img/radioButton.png"
+            src={check}
             alt="Seleccionado"
             className="card-opcion__check-img"
           />
