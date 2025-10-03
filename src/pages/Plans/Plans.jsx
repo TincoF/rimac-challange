@@ -7,6 +7,8 @@ import CardPlan from "../../components/CardPlans/CardPlans";
 import { ButtonBack } from "../../components/ButtonBack/ButtomBack";
 import { calculateAge } from "../../utils/age";
 import { getPlans } from "../../services/plans";
+import ingMio from "../../assets/img/paraMi.png";
+import ingRegalo from "../../assets/img/paraAlguienMas.png";
 
 export const Plans = () => {
   const [selectedOption, setSelectedOption] = useState(null);
@@ -67,14 +69,14 @@ export const Plans = () => {
                     description="Cotiza tu seguro de salud y agrega familiares si así lo deseas."
                     selected={selectedOption === "mio"}
                     onSelect={() => setSelectedOption("mio")}
-                    img={"/src/assets/img/paraMi.png"}
+                    img={ingMio}
                   />
                   <CardCheck
                     title="Para alguien mas"
                     description="Realiza una cotización para uno de tus familiares o cualquier persona."
                     selected={selectedOption === "regalo"}
                     onSelect={() => setSelectedOption("regalo")}
-                    img={"/src/assets/img/paraAlguienMas.png"}
+                    img={ingRegalo}
                   />
                 </div>
 

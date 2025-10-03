@@ -1,4 +1,5 @@
 import "./CardPlans.scss";
+import iconImg from "../../assets/img/IcHome.png";
 const CardPlan = ({ name, price, discountPrice, description, recommended, onSelect }) => {
   
   return (
@@ -27,7 +28,7 @@ const CardPlan = ({ name, price, discountPrice, description, recommended, onSele
           </div>
         </div>
         <div className="card-plan__image">
-          <img src="/src/assets/img/IcHome.png" alt="Plan Icon" />
+          <img src={iconImg} alt="Plan Icon" />
         </div>
       </div>
 
