@@ -1,21 +1,56 @@
-<<<<<<< HEAD
-# rimac-challange
-Proyecto frontend desarrollada en React, que permite al usuario cotizar planes de seguro.
-=======
-# React + Vite
+# 🛡️ Reto Frontend - Rimac Seguros
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto fue desarrollado como parte de un **challenge técnico** para la posición de **Frontend Developer** en Rimac Seguros.  
+La aplicación simula el flujo de cotización de un seguro, desde el login hasta el resumen del plan elegido.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Tecnologías utilizadas
+- **React 18** con React Router DOM
+- **Sass (SCSS)** para estilos
+- **BEM** como metodología de nomenclatura
+- **JavaScript (ES6+)**
+- **LocalStorage** para persistencia
+- **Fetch API** para consumo de servicios REST
+- **Git & GitHub** para control de versiones
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 📌 Funcionalidades principales
+✔️ **Login** con validación estricta de datos (DNI, celular y checkboxes obligatorios).  
+✔️ **Consumo de API** para obtener información de usuario y planes disponibles.  
+✔️ **Filtrado dinámico** de planes según la edad del usuario.  
+✔️ **Aplicación de descuento** del 5% al cotizar para “alguien más”.  
+✔️ **Selección de plan** y guardado en LocalStorage.  
+✔️ **Vista de resumen** con los datos del usuario, formulario y plan seleccionado.  
+✔️ **Rutas protegidas**: no es posible acceder a `/planes` ni `/resumen` sin antes pasar por login.  
+✔️ **Diseño responsive** y semántico.  
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
->>>>>>> 5b897a6 (chore: inicializar proyecto con React)
+## 🛠️ Instalación y ejecución
+
+1. Clonar el repositorio:
+   ```bash
+   git clone https://github.com/TuUsuario/rimac-challenge.git
+   cd rimac-challenge
+2. Instalar dependencias:
+   ```bash
+   npm install
+3. Ejecutar en modo desarrollo:
+   ```bash
+   npm start
+4. Generar build de producción:
+   ```bash
+   npm run build
+
+## 🌐 Deploy
+
+El proyecto está desplegado en Netlify:
+👉 [Ver demo aquí](https://challange-flor-tinco.netlify.app/)
+
+##   ✨ Autor
+
+Flor Andrea Tinco Quispe
+👩‍💻 Frontend Developer
+📍 Perú
