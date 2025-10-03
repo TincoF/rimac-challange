@@ -6,7 +6,6 @@ export const Login = () => {
   return (
     <>
       <Header />
-
       <section className="hero__section">
         <div className="grid">
           <div className="hero__content">

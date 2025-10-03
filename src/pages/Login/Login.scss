@@ -5,6 +5,10 @@
     background-color: vars.$color-fondo-login;
     align-items: center;
     padding: 64px 0;
+      background-image: url("/src/assets/img/blur-asset.png"), url("/src/assets/img/blur-asset-1.png");
+  background-position: left bottom, right top; // posición de cada una
+  background-repeat: no-repeat, no-repeat;       // para que no se repitan
+  background-size: auto, auto;      // tamaño individual
   }
 
   &__content {
@@ -13,8 +17,15 @@
     align-items: center;
     width: 100%;
   }
-}
+   @media (max-width: 768px) {
+    &__section {
+      background-image: url("/src/assets/img/blur-asset-movil.png"), url("/src/assets/img/blur-asset-movile-1.png");
+  background-position: left bottom, right top; 
 
+    }
+   }
+
+}
 .login {
   width: 100%;
   display: flex;
@@ -22,14 +33,10 @@
   gap: 80px;
   margin-right: 2rem;
   box-sizing: border-box;
-
-  /* ---- Imagen (izquierda) ---- */
   &__image-container {
     flex: 1 1 50%;
     max-width: 480px;
     display: block;
-    
-
     .login__image {
       width: 100%;
       height: auto;
@@ -39,8 +46,6 @@
       border-radius: 24px;
     }
   }
-
-  /* ---- Form (derecha) ---- */
   &__form-container {
     flex: 1 1 50%;
     max-width: 40%;
@@ -53,7 +58,8 @@
 
   &__title {
     font-family: vars.$font-sonoma;
-    display: flex;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
     align-items: center;
     gap: 0.75rem;
     font-size: vars.$text-xxl;
@@ -68,7 +74,6 @@
       font-size: vars.$text-xxl;
 
     }
-
     .mesaje {
       display: inline-block;
       padding: 1.5px 8px;
@@ -80,54 +85,35 @@
           rgba(0, 244, 226, 1) 0%,
           rgba(0, 255, 127, 1) 100%);
     }
-
-    /* Imagen pequeña: OCULTA por defecto (desktop/tablet) */
     .login__title-image {
       display: none;
-      width: 40px;
-      height: auto;
       flex-shrink: 0;
     }
   }
-
-  /* ---------- Responsive ---------- */
-
-  /* Tablet: reducir un poco la imagen principal si quieres */
   @media (max-width: 1024px) {
     &__image-container {
       max-width: 45%;
       flex-basis: 45%;
     }
-
     &__form-container {
       max-width: 55%;
       flex-basis: 55%;
     }
   }
-
-  /* Móvil: cuando la pantalla sea pequeña escondemos la imagen grande
-     y mostramos la imagen pequeña junto al título */
   @media (max-width: 768px) {
     flex-direction: column;
     align-items: stretch;
     gap: 1rem;
-    padding: 1rem;
-
-    /* OCULTAR imagen grande */
     &__image-container {
       display: none !important;
       max-width: 100%;
       flex-basis: 0;
     }
-
-    /* Form toma todo el ancho */
     &__form-container {
       max-width: 100%;
       flex-basis: 100%;
       padding: 0 1rem;
     }
-
-    /* Mostrar la imagen pequeña SOLO en móvil */
     &__title {
       .login__title-image {
         display: inline-block !important;

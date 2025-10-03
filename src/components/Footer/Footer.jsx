@@ -25,6 +25,7 @@ export const Footer = () => {
               </defs>
             </svg>
           </div>
+          <div className="footer__divider"></div>
           <div >
             <p className="footer__content-text">© 2025 RIMAC Seguros y Reaseguros.</p>
           </div>

@@ -1,0 +1,18 @@
+@use "/src/styles/variables.scss" as vars;
+.button-back{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+    cursor: pointer;
+    width: 100%;
+
+  &__text{
+    font-family: vars.$font-primary;
+    font-size: vars.$text-m;
+    font-weight: vars.$font-weight-bold;
+    color: vars.$color-blue;
+    text-align: center;
+    line-height: 24px;
+}
+}

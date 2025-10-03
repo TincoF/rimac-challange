@@ -1,11 +1,10 @@
-import "./SteapNav.scss";
+import "./StepNav.scss";
 
 const StepNav = ({ activeStep }) => {
   const steps = [
     { id: 1, label: "Planes y cobertura" },
     { id: 2, label: "Resumen" },
   ];
-
   return (
     <nav className="step-nav">
       <ul className="step-nav__list">
@@ -24,5 +23,4 @@ const StepNav = ({ activeStep }) => {
     </nav>
   );
 };
-
 export default StepNav;

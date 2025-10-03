@@ -12,29 +12,21 @@
     padding: 0;
     margin: 0;
   }
-
   &__item {
     display: flex;
     align-items: center;
     cursor: default;
-    gap:16px;
-
+    gap: 16px;
     &--active .step-nav__circle {
       background-color: vars.$color-blue;
       border-color: vars.$color-blue;
-        font-weight: vars.$font-weight-bold;
-      
-      color: #fff;
+      color: vars.$color-white;
     }
-
     &--active .step-nav__label {
       color: vars.$color-neutral;
-        font-weight: vars.$font-weight-bold;
-      
-
+      font-weight: vars.$font-weight-bold;
     }
   }
-
   &__circle {
     width: 24px;
     height: 24px;
@@ -43,17 +35,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-weight: 600;
+    font-weight: vars.$font-weight-bold;
     color: vars.$color-neutral-600;
     transition: all 0.3s ease;
     font-size: vars.$text-xxs;
   }
-
   &__label {
-    
-    color: #666;
+    color: vars.$color-neutral-600;
     transition: color 0.3s ease;
     font-size: vars.$text-s;
-
   }
 }
